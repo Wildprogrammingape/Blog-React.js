@@ -1,22 +1,18 @@
-import {useState} from 'react';
 import BlogList from './BlogList';
+import useFetch from './useFetch';
 
 const Home = () => {
 
-    const [blogs, setBlogs] = useState([
-        { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
-        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
-        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
-    ]);
+    // data: blogs  means grab the data but call it blogs (别名)
+    const {data:blogs, IsLoading, error} = useFetch('http://localhost:8000/blogs');
 
-    const handleDelete = (id) => {
-        // store the new array after filter()
-        const newBlogs = blogs
-    }
 
+    // 在JSX中写javascript要加{}, 因此{blogs && ...} 是React中条件判断的写法conditional template 
     return (
         <div className="home">
-            <BlogList blogs={blogs} title="All blogs:" handleDelete={handleDelete}></BlogList>
+            {error && <div>{error}</div>}
+            {IsLoading && <div>Loading...</div>}
+            {blogs && <BlogList blogs={blogs} title="All blogs:"></BlogList>}
         </div>
     );
 }
