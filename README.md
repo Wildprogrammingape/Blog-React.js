@@ -1,4 +1,4 @@
-# The blog is developed by Long Chen using React, Hooks and Router, communicating with JSON Server.
+## The blog is developed by Long Chen using React, Hooks and Router, communicating with JSON Server.
 
 # Getting Started with Create React App
 
