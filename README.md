@@ -1,5 +1,7 @@
 ## The blog is developed by Long Chen using React, Hooks and Router, communicating with JSON Server.
 
+Run 'npx json-server --watch data/db.json --port 8000' to start Json Server.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
